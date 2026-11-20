@@ -1,0 +1,96 @@
+
+###
+POST http://127.0.0.1:8000/api/register/
+Content-Type: application/json
+
+{
+    "username": "Aleena",
+    "email": "aleena@example.com",
+    "password": "aleena@123"
+}   
+
+
+###
+POST http://127.0.0.1:8000/login/
+Content-Type: application/json
+
+{
+    "username":"Sara",
+    "password":"Sara@123"
+}
+
+###
+GET  http://127.0.0.1:8000/api/notes/
+Accept: application/json
+Authorization: Token a8e3ca5aeadf006e38c3c6fd659a464e8ed5047b
+
+###
+POST http://127.0.0.1:8000/api/notes/
+Content-Type: application/json
+Authorization: Token a8e3ca5aeadf006e38c3c6fd659a464e8ed5047b
+
+{
+    "title":"Introduction to ML",
+    "description":"Macheine Learning"
+}
+
+
+###
+GET http://127.0.0.1:8000/notes/3/
+Accept: application/json
+Authorization: Token a8e3ca5aeadf006e38c3c6fd659a464e8ed5047b
+
+###
+PUT  http://127.0.0.1:8000/notes/5/
+Content-Type: application/json
+Authorization: Token a8e3ca5aeadf006e38c3c6fd659a464e8ed5047b
+
+{
+    "title":"Introduction to ML",
+    "description":"Machine Learning"
+}
+
+###
+DELETE http://127.0.0.1:8000/notes/2/
+Authorization: Token a8e3ca5aeadf006e38c3c6fd659a464e8ed5047b
+
+
+###
+POST http://127.0.0.1:8000/api/logout/
+Content-Type: application/json
+Authorization: Token a8e3ca5aeadf006e38c3c6fd659a464e8ed5047b
+
+###
+POST http://127.0.0.1:8000/api/jwt_login/
+Content-Type: application/json
+
+{
+    "username": "Aleena",
+    "password": "aleena@123"
+}  
+
+###
+POST http://127.0.0.1:8000/api/jwt_refresh/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTYzODU4LCJpYXQiOjE3OTUxNjM1NTgsImp0aSI6Ijk0YmFlMGI2YWNmMjQ3MmZiODI2MDM5NTBkY2I4Y2RkIiwidXNlcl9pZCI6IjMifQ.r6_FZiwd1Oak7cA86c-wPS5JQOqBoPbxEM3KNF9A494
+
+{
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5NTI0OTk1OCwiaWF0IjoxNzk1MTYzNTU4LCJqdGkiOiI4NGZiYzU4MGYwOGU0MWM1OGJkODJmZDQzNTZmMGRiOCIsInVzZXJfaWQiOiIzIn0.CkyJz2H7etZiweEN7T74GAc1FxvXGCtCQ_s3WH2AZuo"
+}
+
+
+###
+GET http://127.0.0.1:8000/tasks/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTYzOTEzLCJpYXQiOjE3OTUxNjM2MTMsImp0aSI6IjQ0N2JiMDkxYjE3ZTQ2MzM4ZDc5MzY1NjI0M2MwNTI3IiwidXNlcl9pZCI6IjMifQ.Lkv6OL-SCMi6LtI-SNMJiz-fD16w2hQHvtQqdWgEH84
+
+###
+POST http://127.0.0.1:8000/tasks/
+Content-Type:  application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTYwOTkxLCJpYXQiOjE3OTUxNjA2OTEsImp0aSI6ImQ5OGJiZjAwZTVkOTQzNTJiN2M4YTBlZWIxMmQwYzFiIiwidXNlcl9pZCI6IjMifQ.XgiLfrg7cvqgrpGzAkz1n7kcgIDR6BNHpBbLyHdrTsI
+
+{
+    "title":"Sum",
+    "description":"Python pgm to find sum",
+    "due_date":"2026-11-19"
+}
